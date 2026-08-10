@@ -1,0 +1,150 @@
+/* Custom Styling & Design System Extensions */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@500;600;700;800&family=Fira+Code:wght@400;500&display=swap');
+
+:root {
+    --accent-emerald: #10B981;
+    --accent-emerald-dark: #059669;
+    --accent-emerald-glow: rgba(16, 185, 129, 0.25);
+    --font-heading: 'Outfit', sans-serif;
+    --font-body: 'Inter', sans-serif;
+    --font-mono: 'Fira Code', monospace;
+}
+
+/* Custom CSS Variables & Animations */
+html, body {
+    overflow-x: hidden;
+    max-width: 100vw;
+    font-family: var(--font-body);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+h1, h2, h3, h4, h5, h6, .font-heading {
+    font-family: var(--font-heading);
+}
+
+.font-mono {
+    font-family: var(--font-mono);
+}
+
+/* Fluid Typography Scaling */
+.fluid-h1 {
+    font-size: clamp(2.25rem, 5vw + 1rem, 4rem);
+    line-height: 1.15;
+}
+
+.fluid-h2 {
+    font-size: clamp(1.75rem, 3.5vw + 1rem, 2.75rem);
+    line-height: 1.25;
+}
+
+/* Hide Scrollbar for Horizontal Scrollable Containers */
+.no-scrollbar::-webkit-scrollbar {
+    display: none;
+}
+.no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+/* Touch-Friendly Interaction Rules */
+button, a, input, select, textarea {
+    touch-action: manipulation;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+::-webkit-scrollbar-track {
+    background: #090d16;
+}
+::-webkit-scrollbar-thumb {
+    background: #1f293d;
+    border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #10b981;
+}
+
+/* Custom Glassmorphism Effect */
+.glass-nav {
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+}
+
+/* Pulsing Status Dot */
+.status-pulse {
+    box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7);
+    animation: pulse-green 2s infinite;
+}
+
+@keyframes pulse-green {
+    0% {
+        transform: scale(0.95);
+        box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7);
+    }
+    70% {
+        transform: scale(1);
+        box-shadow: 0 0 0 10px rgba(16, 185, 129, 0);
+    }
+    100% {
+        transform: scale(0.95);
+        box-shadow: 0 0 0 0 rgba(16, 185, 129, 0);
+    }
+}
+
+/* Polaroid Photo Card Styles */
+.polaroid-card {
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+.polaroid-card:hover {
+    transform: translateY(-8px) rotate(1deg) scale(1.02);
+    box-shadow: 0 20px 30px -10px rgba(16, 185, 129, 0.25);
+}
+
+/* Service Card Glowing Border */
+.glow-card {
+    position: relative;
+    transition: all 0.3s ease;
+}
+.glow-card::before {
+    content: '';
+    position: absolute;
+    inset: -1px;
+    background: linear-gradient(135deg, rgba(16, 185, 129, 0.4), transparent, rgba(5, 150, 105, 0.2));
+    border-radius: 1rem;
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+.glow-card:hover::before {
+    opacity: 1;
+}
+
+/* GitHub Heatmap Custom Cell Styles (Light Mode Default) */
+.contrib-level-0 { background-color: #e2e8f0; }
+.contrib-level-1 { background-color: #bbf7d0; }
+.contrib-level-2 { background-color: #86efac; }
+.contrib-level-3 { background-color: #4ade80; }
+.contrib-level-4 { background-color: #10b981; }
+
+/* GitHub Heatmap Custom Cell Styles (Dark Mode) */
+.dark .contrib-level-0 { background-color: #1e293b; }
+.dark .contrib-level-1 { background-color: #0e4429; }
+.dark .contrib-level-2 { background-color: #006d32; }
+.dark .contrib-level-3 { background-color: #26a641; }
+.dark .contrib-level-4 { background-color: #39d353; }
+
+/* Dynamic Gradient Text */
+.text-gradient {
+    background: linear-gradient(135deg, #10B981 0%, #34D399 50%, #6EE7B7 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Mountain Graphic Vector Styling */
+.mountain-svg-overlay {
+    pointer-events: none;
+    user-select: none;
+}

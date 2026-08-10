@@ -1,0 +1,51 @@
+{
+  "functions": {
+    "api/*.php": {
+      "runtime": "vercel-php@0.6.0"
+    },
+    "admin/*.php": {
+      "runtime": "vercel-php@0.6.0"
+    },
+    "*.php": {
+      "runtime": "vercel-php@0.6.0"
+    }
+  },
+  "routes": [
+    {
+      "src": "/assets/(.*)",
+      "dest": "/assets/$1"
+    },
+    {
+      "src": "/uploads/(.*)",
+      "dest": "/uploads/$1"
+    },
+    {
+      "src": "/api/(.*)",
+      "dest": "/api/$1"
+    },
+    {
+      "src": "/admin",
+      "dest": "/admin/dashboard.php"
+    },
+    {
+      "src": "/admin/(.*)",
+      "dest": "/admin/$1"
+    },
+    {
+      "src": "/project-details/(.*)",
+      "dest": "/project-details.php?slug=$1"
+    },
+    {
+      "src": "/article-details/(.*)",
+      "dest": "/article-details.php?slug=$1"
+    },
+    {
+      "src": "/index",
+      "dest": "/index.php"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/$1"
+    }
+  ]
+}
