@@ -16,6 +16,7 @@ $site_title = !empty($site_settings['site_title']) ? e($site_settings['site_titl
     <title><?= $site_title ?></title>
     <meta name="description" content="<?= e($hero['subtitle']) ?>">
     <meta name="keywords" content="Full Stack Developer, PHP Developer, MySQL, React, Web Development Bangladesh, Portfolio">
+    <meta name="google-site-verification" content="iOVrJHJzyIGMDpDM8Wpec4EPFamrO6IA3tIwPch9gvI">
 
     <!-- Tailwind CSS (via CDN) -->
     <script src="https://cdn.tailwindcss.com"></script>
