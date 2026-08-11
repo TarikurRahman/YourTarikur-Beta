@@ -102,14 +102,14 @@ $site_title = !empty($site_settings['site_title']) ? e($site_settings['site_titl
                 </button>
 
                 <!-- Mobile Menu Button -->
-                <button id="mobile-menu-btn" type="button" class="md:hidden p-2.5 rounded-xl bg-slate-100 dark:bg-slate-900 border border-slate-300 dark:border-slate-800 text-slate-700 dark:text-slate-300">
+                <button id="mobile-menu-btn" type="button" class="md:hidden p-2.5 rounded-xl bg-slate-100 dark:bg-slate-900 border border-slate-300 dark:border-slate-800 text-slate-700 dark:text-slate-300" aria-controls="mobile-menu" aria-expanded="false" aria-label="Open navigation menu">
                     <i data-lucide="menu" class="w-6 h-6"></i>
                 </button>
             </div>
         </div>
 
         <!-- Mobile Navigation Menu Drawer -->
-        <div id="mobile-menu" class="hidden md:hidden border-b border-slate-200 dark:border-slate-800 bg-white/95 dark:bg-slate-950/95 px-6 py-6 space-y-4">
+        <div id="mobile-menu" class="hidden md:hidden border-b border-slate-200 dark:border-slate-800 bg-white/95 dark:bg-slate-950/95 px-6 py-6 space-y-4" role="navigation" aria-label="Mobile navigation">
             <a href="index.php#home" class="block text-base font-medium text-slate-700 dark:text-slate-300 hover:text-emerald-600 dark:hover:text-emerald-400">Home</a>
             <a href="index.php#projects" class="block text-base font-medium text-slate-700 dark:text-slate-300 hover:text-emerald-600 dark:hover:text-emerald-400">Projects</a>
             <a href="index.php#awards" class="block text-base font-medium text-slate-700 dark:text-slate-300 hover:text-emerald-600 dark:hover:text-emerald-400">Awards & Achievements</a>
