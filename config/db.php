@@ -1,21 +1,29 @@
 <?php
 /**
  * Database Configuration & Connection Handler
- * Uses PDO for secure prepared statement queries against MySQL or SQLite fallback.
- * Supports Vercel Serverless Environment Variables (getenv / $_ENV).
+ * Uses mysqli_connect() for InfinityFree-style MySQL credentials,
+ * then creates a PDO instance for existing application compatibility.
+ * Supports environment variables and dynamic production placeholders.
  */
 
-$db_host = getenv('DB_HOST') ?: (getenv('MYSQLHOST') ?: 'localhost');
+$db_host = getenv('DB_HOST') ?: (getenv('MYSQLHOST') ?: 'sql123.infinityfree.com');
 $db_port = getenv('DB_PORT') ?: (getenv('MYSQLPORT') ?: '3306');
-$db_name = getenv('DB_NAME') ?: (getenv('MYSQLDATABASE') ?: 'portfolio_db');
-$db_user = getenv('DB_USER') ?: (getenv('MYSQLUSER') ?: 'root');
-$db_pass = getenv('DB_PASS') !== false ? getenv('DB_PASS') : (getenv('MYSQLPASSWORD') !== false ? getenv('MYSQLPASSWORD') : '');
+$db_name = getenv('DB_NAME') ?: (getenv('MYSQLDATABASE') ?: 'if0_42625818_portfolio');
+$db_user = getenv('DB_USER') ?: (getenv('MYSQLUSER') ?: 'if0_42625818');
+$db_pass = getenv('DB_PASS') !== false ? getenv('DB_PASS') : (getenv('MYSQLPASSWORD') !== false ? getenv('MYSQLPASSWORD') : 'MWvZvym1gy4');
 
 if (!defined('DB_HOST')) define('DB_HOST', $db_host);
 if (!defined('DB_PORT')) define('DB_PORT', $db_port);
 if (!defined('DB_NAME')) define('DB_NAME', $db_name);
 if (!defined('DB_USER')) define('DB_USER', $db_user);
 if (!defined('DB_PASS')) define('DB_PASS', $db_pass);
+
+$mysqli = mysqli_connect(DB_HOST, DB_USER, DB_PASS, DB_NAME, DB_PORT);
+if (!$mysqli) {
+    die('MySQL connection error: ' . mysqli_connect_errno() . ' - ' . mysqli_connect_error());
+}
+
+mysqli_set_charset($mysqli, 'utf8mb4');
 
 $pdo = null;
 
