@@ -1,0 +1,21 @@
+name: Assign Issue to Copilot
+
+on:
+  issues:
+    types: [labeled]
+
+jobs:
+  assign-copilot:
+    if: github.event.label.name == 'copilot'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Assign to Copilot Agent
+        uses: actions/github-script@v7
+        with:
+          script: |
+            github.rest.issues.addAssignees({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: context.issue.number,
+              assignees: ['copilot-swe-agent[bot]']
+            });
