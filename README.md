@@ -60,15 +60,6 @@ Then open:
 http://localhost:8000
 ```
 
-### Admin Access
-
-Default admin login details:
-
-```text
-Username: admin
-Password: admin123
-```
-
 You can change these later from the admin settings area.
 
 ---
@@ -114,8 +105,8 @@ database.sql   # Database schema and sample data
 Hello! I’m Tarikur Rahman, a developer passionate about building modern web applications, creative digital experiences, and practical software solutions.
 
 - Name: Tarikur Rahman
-- GitHub: https://github.com/tarikurrahmanbd
-- Portfolio: https://yourtarikur.netlify.app/
+- GitHub: https://github.com/tarikurrahman
+- Portfolio: https://yourtarikur.vercel.app/
 - Social/Handle: tarikurrahman08
 - Email: tarikurrahman2008@gmail.com
 
