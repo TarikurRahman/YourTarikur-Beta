@@ -4,6 +4,24 @@ A modern, dynamic personal portfolio website built with native PHP, MySQL/SQLite
 
 It also includes an admin dashboard so the site owner can manage content without editing code directly.
 
+
+<!-- Website Full Preview -->
+<div align="center">
+
+  ## 🖥️ Live Preview
+
+  <a href="https://tarikurrahman.site.je/" target="_blank">
+    <img src="https://img.shields.io/badge/🚀_VISIT_LIVE_SITE-tarikurrahman.site.je-0070f3?style=for-the-badge&logo=googlechrome&logoColor=white" alt="Visit Live Site" />
+  </a>
+
+  <br /><br />
+
+  <a href="https://tarikurrahman.site.je/" target="_blank">
+    <img src="https://github.com/user-attachments/assets/db48dfd1-1681-41c7-9942-086898402fd0" alt="YourTarikur-Beta Website Preview" width="100%" />
+  </a>
+
+</div>
+
 ---
 
 ## 1. Project Overview
